@@ -1,7 +1,6 @@
 #!/bin/bash
 rm -r fol_1
 rm -r fol_2
-rm -r .gitignore
 mkdir fol_1 
 cd fol_1
 touch 1_1.txt 1_2.txt  1_3.txt
@@ -10,7 +9,12 @@ mkdir fol_2
 cd fol_2
 touch 2_1.txt 2_2.txt 2_3.txt
 cd ..
-touch .gitignore 
-echo "fol" > .gitignore
+chmod u+rw fol_1/1_1.txt
+chmod u+rw fol_1/1_3.txt
+chmod u+rw fol_2/2_1.txt
+chmod u+rw fol_2/2_3.txt
+chmod ugo+rwx fol_1/1_2.txt
+chmod ugo+rwx fol_2/2_2.txt
 
+echo "Job Completed :)"
 
